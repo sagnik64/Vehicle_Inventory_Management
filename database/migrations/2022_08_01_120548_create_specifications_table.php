@@ -15,8 +15,7 @@ class CreateSpecificationsTable extends Migration
     {
         Schema::create('specifications', function (Blueprint $table) {
             $table->id();
-            $table->integer('year_of_manufacture');
-            $table->string('fuel_type');
+            $table->integer('first_production_year');
             $table->string('transmission');
             $table->integer('engine_displacement_(cc)');
             $table->integer('seating_capacity');
@@ -30,20 +29,20 @@ class CreateSpecificationsTable extends Migration
             $table->integer('width_(mm)');
             $table->integer('height_(mm)');
             $table->integer('wheel_base_(mm)');
-            $table->boolean('power_steering')->default(null);
-            $table->boolean('power_windows_front')->default(null);
-            $table->boolean('anti_lock_braking_system')->default(null);
-            $table->boolean('air_conditioner')->default(null);
-            $table->boolean('heater')->default(null);
-            $table->boolean('driver_airbag')->default(null);
-            $table->boolean('passenger_airbag')->default(null);
-            $table->boolean('automatic_climate_control')->default(null);
-            $table->boolean('alloy_wheels')->default(null);
-            $table->boolean('multi_function')->default(null);
-            $table->boolean('cruise_control')->default(null);
-            $table->boolean('parking_sensors')->default(null);
-            $table->boolean('usb_charger')->default(null);
-            $table->boolean('voice_control')->default(null);
+            $table->boolean('power_steering')->nullable()->default(null);
+            $table->boolean('power_windows_front')->nullable()->default(null);
+            $table->boolean('anti_lock_braking_system')->nullable()->default(null);
+            $table->boolean('air_conditioner')->nullable()->default(null);
+            $table->boolean('heater')->nullable()->default(null);
+            $table->boolean('driver_airbag')->nullable()->default(null);
+            $table->boolean('passenger_airbag')->nullable()->default(null);
+            $table->boolean('automatic_climate_control')->nullable()->default(null);
+            $table->boolean('alloy_wheels')->nullable()->default(null);
+            $table->boolean('multi_function')->nullable()->default(null);
+            $table->boolean('cruise_control')->nullable()->default(null);
+            $table->boolean('parking_sensors')->nullable()->default(null);
+            $table->boolean('usb_charger')->nullable()->default(null);
+            $table->boolean('voice_control')->nullable()->default(null);
             $table->timestamps();
         });
     }
